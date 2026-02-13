@@ -2,40 +2,30 @@
 
 A beautiful, interactive Valentine's Day experience.
 
-## 🚀 How to Host on GitHub (For Mobile Access)
+## 🚀 Troubleshooting the Website
 
-To share this with Surbhi so she can open it on her phone, follow these steps:
+If your site `https://yash8827.github.io/Valentine/` is not opening, please check the following:
 
-### 1. Create a GitHub Repository
-* Go to [GitHub](https://github.com) and create a new repository named `valentine-for-surbhi`.
-* Keep it **Public**.
+### 1. Case Sensitivity
+GitHub Pages URLs are **case-sensitive**. 
+* If your repository is named `Valentine`, use `https://yash8827.github.io/Valentine/`.
+* If your repository is named `valentine`, use `https://yash8827.github.io/valentine/`.
 
-### 2. Upload the Files
-* You can use the GitHub Desktop app or the command line:
-  ```bash
-  git init
-  git add .
-  git commit -m "Happy Valentine's Day"
-  git branch -M main
-  git remote add origin https://github.com/YOUR_USERNAME/valentine-for-surbhi.git
-  git push -u origin main
-  ```
-* *Alternatively:* You can just drag and drop the files directly into the GitHub website upload interface.
+### 2. Check the Deployment Status
+1. Go to your GitHub repository.
+2. Click on the **Actions** tab.
+3. Look for a workflow named **"pages build and deployment"**.
+4. If it has a red 'X', it failed. If it has a green checkmark, your site is live!
 
-### 3. Enable GitHub Pages
-* In your GitHub repository, go to **Settings** (top tab).
-* Click on **Pages** (left sidebar).
-* Under **Build and deployment**, set the source to **Deploy from a branch**.
-* Select the **main** branch and the **/(root)** folder.
-* Click **Save**.
-
-### 4. Open on Mobile
-* After a minute, GitHub will give you a link (e.g., `https://your-username.github.io/valentine-for-surbhi/`).
-* Copy this link and send it to Surbhi! It is fully responsive and works perfectly on all mobile browsers.
+### 3. React/TypeScript on GitHub Pages
+Browsers cannot read `.tsx` files directly. To host this on GitHub Pages:
+* You should ideally use a build tool like **Vite**.
+* If you are just uploading raw files, they must be compiled to `.js`.
+* **Pro Tip:** For a React app like this, it is much easier to use **[Vercel](https://vercel.com)** or **[Netlify](https://netlify.com)**. You just connect your GitHub account, select the repo, and they handle the hosting and mobile optimization perfectly for free!
 
 ## ✨ Features
 - **Apology Letter**: A heartfelt start to clear the air.
-- **Flower Transition**: A virtual bouquet of roses.
-- **Promise Day**: Heartfelt promises to stay together forever.
+- **Flower Transition**: A virtual bouquet of roses for Surbhi.
+- **Promise Day**: Personalized promises.
 - **Interactive Question**: A playful "Will you be my Valentine?" game where the "No" button runs away.
-- **Mobile Optimized**: Smooth animations and touch-friendly interface.
+- **Mobile Optimized**: Designed to look amazing on her phone.
