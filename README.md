@@ -1,10 +1,10 @@
-# 💖 Private Valentine's Hub for Surbhi
+# 💖 Valentine's Hub for Surbhi
 
-Follow these 5 steps to get your private link for free:
+Follow these 5 steps to get your public link for free:
 
 ### 1. GitHub (The Storage)
 * Go to GitHub and create a **NEW REPOSITORY** named `Valentine`.
-* **IMPORTANT:** Set it to **PRIVATE**.
+* You can set it to **PUBLIC** or **PRIVATE**.
 * Upload all project files here.
 
 ### 2. Google AI (The Brain)
@@ -13,7 +13,7 @@ Follow these 5 steps to get your private link for free:
 
 ### 3. Vercel (The Host)
 * Go to [Vercel.com](https://vercel.com) and log in with GitHub.
-* Import your **Private** `Valentine` repository.
+* Import your `Valentine` repository.
 
 ### 4. Secret Settings
 * In the Vercel setup, find **Environment Variables**.
@@ -24,7 +24,7 @@ Follow these 5 steps to get your private link for free:
 
 ### 5. Deploy & Get Link
 * Click **Deploy**. Vercel will give you a link (e.g., `valentine-surbhi.vercel.app`).
-* Send this link to Surbhi! The site is protected by the password: **Surbhi**
+* Send this link to Surbhi! The site will open directly for her.
 
 ---
 *Created with love.*

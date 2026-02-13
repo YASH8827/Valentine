@@ -8,11 +8,9 @@ import ValentineGame from './components/ValentineGame';
 import ApologyLetter from './components/ApologyLetter';
 import FlowerTransition from './components/FlowerTransition';
 import PromiseDay from './components/PromiseDay';
-import PasswordGate from './components/PasswordGate';
 import { AppSection } from './types';
 
 const App: React.FC = () => {
-  const [isUnlocked, setIsUnlocked] = useState(false);
   const [activeSection, setActiveSection] = useState<AppSection>(AppSection.LANDING);
 
   const renderContent = () => {
@@ -77,12 +75,10 @@ const App: React.FC = () => {
     }
   };
 
-  const showNav = isUnlocked && ![AppSection.LANDING, AppSection.FLOWER_TRANSITION, AppSection.PROMISE_DAY, AppSection.QUESTION].includes(activeSection);
+  const showNav = ![AppSection.LANDING, AppSection.FLOWER_TRANSITION, AppSection.PROMISE_DAY, AppSection.QUESTION].includes(activeSection);
 
   return (
     <div className="min-h-screen relative font-sans text-gray-900 selection:bg-red-200">
-      {!isUnlocked && <PasswordGate onUnlock={() => setIsUnlocked(true)} />}
-
       {/* Background selection */}
       {[AppSection.FLOWER_TRANSITION, AppSection.PROMISE_DAY].includes(activeSection) ? (
         <BackgroundFlowers />
@@ -125,7 +121,7 @@ const App: React.FC = () => {
       {/* Main Content */}
       <main className={`relative z-10 ${showNav ? 'pt-24' : 'pt-4'}`}>
         <div className="container mx-auto px-4">
-          {isUnlocked && renderContent()}
+          {renderContent()}
         </div>
       </main>
 
