@@ -1,0 +1,8 @@
+{
+  "name": "Valentine's Love Hub",
+  "description": "A beautiful, interactive Valentine's Day experience featuring AI-powered personalized poems, romantic image generation, and a heartfelt 'Will you be my Valentine?' interactive game.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
