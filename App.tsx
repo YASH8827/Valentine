@@ -8,9 +8,11 @@ import ValentineGame from './components/ValentineGame';
 import ApologyLetter from './components/ApologyLetter';
 import FlowerTransition from './components/FlowerTransition';
 import PromiseDay from './components/PromiseDay';
+import PasswordGate from './components/PasswordGate';
 import { AppSection } from './types';
 
 const App: React.FC = () => {
+  const [isUnlocked, setIsUnlocked] = useState(false);
   const [activeSection, setActiveSection] = useState<AppSection>(AppSection.LANDING);
 
   const renderContent = () => {
@@ -30,17 +32,17 @@ const App: React.FC = () => {
       case AppSection.HOME:
         return (
           <div className="text-center space-y-8 py-20 animate-fade-in">
-            <h1 className="text-8xl font-romantic text-red-600 animate-pulse drop-shadow-md">
+            <h1 className="text-7xl md:text-8xl font-romantic text-red-600 animate-pulse drop-shadow-md">
               Valentine's Love Hub
             </h1>
-            <p className="text-2xl text-pink-500 font-cursive max-w-2xl mx-auto px-4">
+            <p className="text-xl md:text-2xl text-pink-500 font-cursive max-w-2xl mx-auto px-4">
               Now that we're officially Valentines, explore the special space I built just for us. 
               Every corner of this site has a piece of my heart.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto p-4">
               <button
                 onClick={() => setActiveSection(AppSection.POEM)}
-                className="group p-10 glass rounded-[3rem] hover:bg-white transition-all transform hover:-translate-y-2 shadow-xl border-2 border-pink-100"
+                className="group p-8 md:p-10 glass rounded-[3rem] hover:bg-white transition-all transform hover:-translate-y-2 shadow-xl border-2 border-pink-100"
               >
                 <div className="text-6xl mb-4 group-hover:scale-125 transition-transform">📜</div>
                 <h3 className="text-2xl font-bold text-gray-800">Love Poems</h3>
@@ -49,7 +51,7 @@ const App: React.FC = () => {
               
               <button
                 onClick={() => setActiveSection(AppSection.VISION)}
-                className="group p-10 glass rounded-[3rem] hover:bg-white transition-all transform hover:-translate-y-2 shadow-xl border-2 border-pink-100"
+                className="group p-8 md:p-10 glass rounded-[3rem] hover:bg-white transition-all transform hover:-translate-y-2 shadow-xl border-2 border-pink-100"
               >
                 <div className="text-6xl mb-4 group-hover:scale-125 transition-transform">🌅</div>
                 <h3 className="text-2xl font-bold text-gray-800">Our Vision</h3>
@@ -75,10 +77,12 @@ const App: React.FC = () => {
     }
   };
 
-  const showNav = ![AppSection.LANDING, AppSection.FLOWER_TRANSITION, AppSection.PROMISE_DAY, AppSection.QUESTION].includes(activeSection);
+  const showNav = isUnlocked && ![AppSection.LANDING, AppSection.FLOWER_TRANSITION, AppSection.PROMISE_DAY, AppSection.QUESTION].includes(activeSection);
 
   return (
     <div className="min-h-screen relative font-sans text-gray-900 selection:bg-red-200">
+      {!isUnlocked && <PasswordGate onUnlock={() => setIsUnlocked(true)} />}
+
       {/* Background selection */}
       {[AppSection.FLOWER_TRANSITION, AppSection.PROMISE_DAY].includes(activeSection) ? (
         <BackgroundFlowers />
@@ -91,26 +95,26 @@ const App: React.FC = () => {
         <nav className="fixed top-0 left-0 right-0 z-50 glass px-6 py-4 flex justify-between items-center animate-fade-in shadow-sm">
           <div 
             onClick={() => setActiveSection(AppSection.HOME)} 
-            className="text-3xl font-romantic text-red-600 cursor-pointer hover:scale-105 transition-transform"
+            className="text-2xl md:text-3xl font-romantic text-red-600 cursor-pointer hover:scale-105 transition-transform"
           >
             Love Hub ❤️
           </div>
           <div className="flex gap-4 md:gap-10">
              <button 
                 onClick={() => setActiveSection(AppSection.HOME)}
-                className={`text-sm font-bold transition-colors uppercase tracking-widest ${activeSection === AppSection.HOME ? 'text-red-500' : 'text-gray-600 hover:text-red-500'}`}
+                className={`text-xs md:text-sm font-bold transition-colors uppercase tracking-widest ${activeSection === AppSection.HOME ? 'text-red-500' : 'text-gray-600 hover:text-red-500'}`}
              >
                Home
              </button>
              <button 
                 onClick={() => setActiveSection(AppSection.POEM)}
-                className={`text-sm font-bold transition-colors uppercase tracking-widest ${activeSection === AppSection.POEM ? 'text-red-500' : 'text-gray-600 hover:text-red-500'}`}
+                className={`text-xs md:text-sm font-bold transition-colors uppercase tracking-widest ${activeSection === AppSection.POEM ? 'text-red-500' : 'text-gray-600 hover:text-red-500'}`}
              >
                Poem
              </button>
              <button 
                 onClick={() => setActiveSection(AppSection.VISION)}
-                className={`text-sm font-bold transition-colors uppercase tracking-widest ${activeSection === AppSection.VISION ? 'text-red-500' : 'text-gray-600 hover:text-red-500'}`}
+                className={`text-xs md:text-sm font-bold transition-colors uppercase tracking-widest ${activeSection === AppSection.VISION ? 'text-red-500' : 'text-gray-600 hover:text-red-500'}`}
              >
                Vision
              </button>
@@ -121,7 +125,7 @@ const App: React.FC = () => {
       {/* Main Content */}
       <main className={`relative z-10 ${showNav ? 'pt-24' : 'pt-4'}`}>
         <div className="container mx-auto px-4">
-          {renderContent()}
+          {isUnlocked && renderContent()}
         </div>
       </main>
 

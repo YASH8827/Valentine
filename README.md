@@ -1,31 +1,30 @@
-# 💖 Valentine's Love Hub for Surbhi
+# 💖 Private Valentine's Hub for Surbhi
 
-A beautiful, interactive Valentine's Day experience.
+Follow these 5 steps to get your private link for free:
 
-## 🚀 Troubleshooting the Website
+### 1. GitHub (The Storage)
+* Go to GitHub and create a **NEW REPOSITORY** named `Valentine`.
+* **IMPORTANT:** Set it to **PRIVATE**.
+* Upload all project files here.
 
-If your site `https://yash8827.github.io/Valentine/` is not opening, please check the following:
+### 2. Google AI (The Brain)
+* Go to [Google AI Studio](https://aistudio.google.com/app/apikey).
+* Create an API Key and **COPY** it.
 
-### 1. Case Sensitivity
-GitHub Pages URLs are **case-sensitive**. 
-* If your repository is named `Valentine`, use `https://yash8827.github.io/Valentine/`.
-* If your repository is named `valentine`, use `https://yash8827.github.io/valentine/`.
+### 3. Vercel (The Host)
+* Go to [Vercel.com](https://vercel.com) and log in with GitHub.
+* Import your **Private** `Valentine` repository.
 
-### 2. Check the Deployment Status
-1. Go to your GitHub repository.
-2. Click on the **Actions** tab.
-3. Look for a workflow named **"pages build and deployment"**.
-4. If it has a red 'X', it failed. If it has a green checkmark, your site is live!
+### 4. Secret Settings
+* In the Vercel setup, find **Environment Variables**.
+* Add:
+  * Key: `API_KEY`
+  * Value: (Paste your key from Step 2)
+* Click **Add**.
 
-### 3. React/TypeScript on GitHub Pages
-Browsers cannot read `.tsx` files directly. To host this on GitHub Pages:
-* You should ideally use a build tool like **Vite**.
-* If you are just uploading raw files, they must be compiled to `.js`.
-* **Pro Tip:** For a React app like this, it is much easier to use **[Vercel](https://vercel.com)** or **[Netlify](https://netlify.com)**. You just connect your GitHub account, select the repo, and they handle the hosting and mobile optimization perfectly for free!
+### 5. Deploy & Get Link
+* Click **Deploy**. Vercel will give you a link (e.g., `valentine-surbhi.vercel.app`).
+* Send this link to Surbhi! The site is protected by the password: **Surbhi**
 
-## ✨ Features
-- **Apology Letter**: A heartfelt start to clear the air.
-- **Flower Transition**: A virtual bouquet of roses for Surbhi.
-- **Promise Day**: Personalized promises.
-- **Interactive Question**: A playful "Will you be my Valentine?" game where the "No" button runs away.
-- **Mobile Optimized**: Designed to look amazing on her phone.
+---
+*Created with love.*
