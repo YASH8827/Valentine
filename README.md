@@ -1,30 +1,33 @@
-# 💖 Valentine's Hub for Surbhi
 
-Follow these 5 steps to get your public link for free:
+# 💖 Valentine's Hub for Surbhi - Deployment Guide
 
-### 1. GitHub (The Storage)
-* Go to GitHub and create a **NEW REPOSITORY** named `Valentine`.
-* You can set it to **PUBLIC** or **PRIVATE**.
-* Upload all project files here.
+### Phase 1: Preparation
+1.  Make sure you have all the files (index.html, index.tsx, App.tsx, package.json, vite.config.ts, etc.) in one folder on your computer.
 
-### 2. Google AI (The Brain)
-* Go to [Google AI Studio](https://aistudio.google.com/app/apikey).
-* Create an API Key and **COPY** it.
+### Phase 2: GitHub (Storage)
+1.  Go to [GitHub.com](https://github.com) and log in.
+2.  Click **"New"** to create a repository. Name it `valentine-2025`.
+3.  Set it to **Public** or **Private** (doesn't matter).
+4.  Click **"uploading an existing file"** on the setup page.
+5.  **Drag and drop ALL files** from your folder into GitHub.
+6.  Click **"Commit changes"** at the bottom.
 
-### 3. Vercel (The Host)
-* Go to [Vercel.com](https://vercel.com) and log in with GitHub.
-* Import your `Valentine` repository.
+### Phase 3: Google AI (The Brain)
+1.  Go to [Google AI Studio](https://aistudio.google.com/app/apikey).
+2.  Click **"Create API key"**.
+3.  **Copy the key** (looks like `AIza...`). Save it somewhere.
 
-### 4. Secret Settings
-* In the Vercel setup, find **Environment Variables**.
-* Add:
-  * Key: `API_KEY`
-  * Value: (Paste your key from Step 2)
-* Click **Add**.
+### Phase 4: Vercel (The Live Site)
+1.  Go to [Vercel.com](https://vercel.com) and log in using your **GitHub account**.
+2.  Click **"Add New"** > **"Project"**.
+3.  Find your `valentine-2025` repository and click **"Import"**.
+4.  **CRITICAL STEP:** Before clicking Deploy, find the **"Environment Variables"** section.
+5.  Add a new variable:
+    *   **Key:** `API_KEY`
+    *   **Value:** (Paste your key from Phase 3)
+6.  Click **"Add"**.
+7.  Click **"Deploy"**.
 
-### 5. Deploy & Get Link
-* Click **Deploy**. Vercel will give you a link (e.g., `valentine-surbhi.vercel.app`).
-* Send this link to Surbhi! The site will open directly for her.
-
----
-*Created with love.*
+### Phase 5: Verification
+1.  Once Vercel finished building, click the link it gives you.
+2.  If the site opens, you are ready! Send the link to Surbhi.
